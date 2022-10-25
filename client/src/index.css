@@ -1,0 +1,242 @@
+main {
+  min-height: 80vh;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+}
+
+.navbar a {
+  color: #b63381;
+  padding: 8px;
+}
+
+.navbar-avatar {
+  width: 40px;
+  border-radius: 50%;
+  border: 2px solid gray;
+  object-fit: cover;
+  height: 40px;
+  margin-right: 6px;
+}
+
+.active {
+  border: 0.5px solid #b63381;
+  color: #b63381 !important;
+}
+
+.dropdown-item.active {
+  background-color: transparent;
+}
+
+.fixed-sideBar {
+  position: fixed;
+  top: 70px;
+  right: 0px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.card-margin {
+  margin: 0 16px;
+}
+
+.progress-bar {
+  background-color: #a50064 !important;
+}
+
+.bg-success {
+  background-color: #7eb54a !important;
+}
+
+.day-left {
+  font-size: 14px;
+  color: #fcae71;
+  background-color: #ffe8e0;
+  border: 0px;
+  height: 32px;
+  border-radius: 3rem;
+  padding: 6px 12px;
+}
+
+.day-complete {
+  font-size: 14px;
+  color: #fff;
+  background-color: #ffffff;
+  border: 0px;
+  height: 32px;
+  border-radius: 3rem;
+  padding: 6px 12px;
+}
+
+.home-btn-donate {
+  font-size: 14px;
+  margin-top: 7px;
+  color: #b63381;
+  background-color: #f0d5e5;
+  border: 1px solid #b63381;
+  padding: 3px 12px;
+}
+
+.home-btn-donate:hover {
+  background-color: #f3e4ec;
+  border: 1px solid #b63381;
+  color: #b63381;
+}
+
+.home-btn-complete {
+  font-size: 14px;
+  margin-top: 7px;
+  color: #198754;
+  background-color: #ddede3;
+  border: 1px solid #198754;
+  padding: 3px 12px;
+}
+
+.home-btn-complete:hover {
+  background-color: #ddede392;
+  border: 1px solid #198754;
+  color: #198754;
+}
+
+.home-btn-finish {
+  font-size: 14px;
+  margin-top: 7px;
+  color: #ffc107;
+  background-color: #ffc10712;
+  border: 1px solid #ffc107;
+  padding: 3px 12px;
+}
+
+.home-btn-finish:hover {
+  background-color: #ffc10733;
+  border: 1px solid #ffc107;
+  color: #ffc107;
+}
+
+.detail-btn-donate,
+.detail-btn-donate:focus {
+  font-size: 18px;
+  margin-top: 7px;
+  color: #ffffff;
+  background-color: #be185d;
+  border: 1px solid #b63381;
+  width: 100%;
+}
+
+.detail-btn-donate:hover {
+  background-color: rgb(143, 3, 61);
+  border: 1px solid #b63381;
+}
+
+.detail-btn-complete,
+.detail-btn-complete:focus {
+  font-size: 18px;
+  margin-top: 7px;
+  color: #ffffff;
+  background-color: #198754;
+  border: 1px solid #198754;
+  width: 100%;
+}
+
+.detail-btn-complete:hover {
+  background-color: #198754ca;
+  border: 1px solid #198754;
+}
+
+.detail-btn-finish,
+.detail-btn-finish:focus {
+  font-size: 18px;
+  margin-top: 7px;
+  color: #ffffff;
+  background-color: #ffc107;
+  border: 1px solid #ffc107;
+  width: 100%;
+}
+
+.detail-btn-finish:hover {
+  background-color: #ffc107ca;
+  border: 1px solid #ffc107;
+}
+
+.btn-modal-donate,
+.btn-modal-donate:focus {
+  color: #ffffff;
+  background-color: #be185d;
+  border: 1px solid #b63381;
+}
+
+.btn-modal-donate:hover {
+  background-color: rgb(143, 3, 61);
+  border: 1px solid #b63381;
+}
+
+tr > td:hover {
+  overflow: visible;
+  white-space: unset;
+}
+
+.post-image img {
+  width: 100%;
+}
+
+.profile-img {
+  position: relative;
+  top: -55px;
+  width: 100px;
+  border-radius: 50%;
+  border: 2px solid gray;
+  object-fit: cover;
+  height: 100px;
+}
+
+.line {
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid #000;
+  line-height: 0.1em;
+  margin: 10px 0 20px;
+}
+
+.or {
+  font-size: 18px;
+  border: 2px solid lightgray;
+  border-radius: 50%;
+  padding: 8px;
+  color: gray;
+  background-color: white;
+  font-weight: bold;
+}
+
+.signup-profile-container {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.signup-profile-picture {
+  width: 100px;
+  border-radius: 50%;
+  border: 2px solid gray;
+  object-fit: cover;
+  height: 100px;
+}
+
+.add-picture-icon {
+  position: absolute;
+  bottom: 0;
+  right: 10px;
+  color: green;
+  background: white;
+  cursor: pointer;
+  z-index: 99;
+}
+
+@media screen and (max-width: 991.5px) {
+  .fixed-sideBar {
+    position: static;
+  }
+}
