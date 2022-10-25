@@ -19,6 +19,7 @@ router.get('/my-donations', protect, donationController.getMyDonations);
 // get user's donation information by ID
 router.get('/:id', protect, admin, donationController.getUserDonations);
 
+// route for save information of stripe payment
 router.post('/payment', async (req, res) => {
   let status, error;
   const { token, amount } = req.body;

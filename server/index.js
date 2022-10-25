@@ -54,24 +54,6 @@ app.use('/auth', authRoutes);
 // path for storage multer upload
 app.use('/uploads', express.static(path.join(path.resolve(), '/uploads')));
 
-// route for save information of stripe payment
-app.post('/payment', async (req, res) => {
-  let status, error;
-  const { token, amount } = req.body;
-  try {
-    await stripe.charges.create({
-      source: token.id,
-      amount,
-      currency: 'vnd',
-    });
-    status = 'success';
-  } catch (error) {
-    console.log(error);
-    status = 'Failure';
-  }
-  res.json({ error, status });
-});
-
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(path.resolve(), '/client/build')));
 

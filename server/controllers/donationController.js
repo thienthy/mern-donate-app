@@ -30,6 +30,8 @@ exports.postDonate = asyncHandler(async (req, res) => {
   res.status(201).json(createdDonation);
 });
 
+// @desc donate to project without login
+// @route POST /api/donations/no-login
 exports.postDonateWithoutLogin = asyncHandler(async (req, res) => {
   const { name, email, projectId, money, message } = req.body;
 
