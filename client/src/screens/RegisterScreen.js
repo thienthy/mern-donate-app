@@ -4,6 +4,7 @@ import { Form, Button, Row, Col, Modal, Container } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import Message from '../components/Message';
 import Loader from '../components/Loader';
+import Meta from '../components/Meta';
 import { register } from '../actions/userActions';
 import success from '../assets/images/success.png';
 import registerBackground from '../assets/images/register-logo.jpeg';
@@ -15,8 +16,6 @@ const RegisterScreen = () => {
   const [form, setForm] = useState({});
   const [errors, setErrors] = useState({});
   const [image, setImage] = useState(null);
-  // eslint-disable-next-line
-  const [uploadingImg, setUploadingImg] = useState(false);
   const [imagePreview, setImagePreview] = useState(null);
 
   const setField = (field, value) => {
@@ -48,17 +47,15 @@ const RegisterScreen = () => {
     formData.append('image', image);
 
     try {
-      setUploadingImg(true);
       const config = {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
       };
       const { data } = await axios.post('/api/upload', formData, config);
-      setUploadingImg(false);
+
       return data;
     } catch (error) {
-      setUploadingImg(false);
       console.error(error);
     }
   };
@@ -111,6 +108,7 @@ const RegisterScreen = () => {
 
   return (
     <Container>
+      <Meta title="Register" />
       {error && <Message variant="danger">{error}</Message>}
       {loading && <Loader />}
       <Row className="justify-content-between mt-5 mx-5">

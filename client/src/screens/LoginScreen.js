@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import Message from '../components/Message';
 import Loader from '../components/Loader';
+import Meta from '../components/Meta';
 import { login } from '../actions/userActions';
 import loginBackground from '../assets/images/login-logo.jpg';
 import Google from '../assets/images/google.png';
@@ -75,6 +76,7 @@ const LoginScreen = () => {
 
   return (
     <Container>
+      <Meta title="Login" />
       {loading && <Loader />}
       <Row
         className="justify-content-between mx-5"

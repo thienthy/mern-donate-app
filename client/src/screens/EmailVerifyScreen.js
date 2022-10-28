@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import axios from 'axios';
 import { Container } from 'react-bootstrap';
 import verifyEmail from '../assets/images/verify-email.jpg';
+import Meta from '../components/Meta';
 
 const EmailVerify = () => {
   const [validUrl, setValidUrl] = useState(true);
@@ -26,6 +27,7 @@ const EmailVerify = () => {
 
   return (
     <Container>
+      <Meta title="Email verification" />
       {validUrl ? (
         <div
           className="d-flex flex-column align-items-center"

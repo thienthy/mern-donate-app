@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useParams, useNavigate } from 'react-router-dom';
 import Message from '../components/Message';
 import Loader from '../components/Loader';
+import Meta from '../components/Meta';
 import FormContainer from '../components/FormContainer';
 import { getProjectDetails, updateProject } from '../actions/projectActions';
 import { PROJECT_UPDATE_RESET } from '../constants/projectConstants';
@@ -125,6 +126,7 @@ const ProjectEditScreen = () => {
 
   return (
     <Container>
+      <Meta title={`Project ${project._id}`} />
       <Link to="/admin/projects" className="btn btn-primary my-3">
         Go Back
       </Link>

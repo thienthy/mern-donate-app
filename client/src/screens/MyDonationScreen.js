@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import Message from '../components/Message';
 import Loader from '../components/Loader';
+import Meta from '../components/Meta';
 import { myDonationsList } from '../actions/donationActions';
 import { useTable, useSortBy, usePagination } from 'react-table';
 
@@ -88,6 +89,7 @@ const MyDonationScreen = () => {
 
   return (
     <Container>
+      <Meta title="My donations" />
       <Row className="align-items-center">
         <Col>
           <h2 className="my-3">Donations</h2>

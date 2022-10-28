@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import { Form, Button, Card, Container } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams, useNavigate } from 'react-router-dom';
-
 import Message from '../components/Message';
 import Loader from '../components/Loader';
+import Meta from '../components/Meta';
 import FormContainer from '../components/FormContainer';
 import { getUserDetails, updateUser } from '../actions/userActions';
 import { USER_UPDATE_RESET } from '../constants/userConstants';
@@ -65,6 +65,7 @@ const UserEditScreen = () => {
 
   return (
     <Container>
+      <Meta title={`User ${user._id}`} />
       <Link to="/admin/users" className="btn btn-light my-3">
         Go Back
       </Link>

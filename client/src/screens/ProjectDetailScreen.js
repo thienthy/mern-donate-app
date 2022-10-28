@@ -3,6 +3,7 @@ import { Row, Col, CardImg } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
 import Loader from '../components/Loader';
 import Message from '../components/Message';
+import Meta from '../components/Meta';
 import { useNavigate } from 'react-router-dom';
 import { Button, Card } from 'react-bootstrap';
 import heart from '../assets/images/icon-heart.png';
@@ -54,6 +55,7 @@ const ProjectDetailScreen = () => {
 
   return (
     <div className="container-md" style={{ marginTop: '5.5rem' }}>
+      <Meta title={project.title} />
       {loading ? (
         <Loader />
       ) : error ? (

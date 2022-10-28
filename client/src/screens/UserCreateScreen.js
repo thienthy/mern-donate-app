@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import Message from '../components/Message';
 import Loader from '../components/Loader';
+import Meta from '../components/Meta';
 import FormContainer from '../components/FormContainer';
 import { createUser } from '../actions/userActions';
 import { USER_CREATE_RESET } from '../constants/userConstants';
@@ -123,6 +124,7 @@ const UserCreateScreen = () => {
 
   return (
     <Container>
+      <Meta title="User create" />
       <Link to="/admin/users" className="btn btn-light my-3">
         Go Back
       </Link>

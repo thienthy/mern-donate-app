@@ -72,6 +72,9 @@ const DonateModalWithLogin = ({
       const response = await axios({
         url: 'http://localhost:5000/api/donations/payment',
         method: 'post',
+        headers: {
+          'Content-Type': 'application/json',
+        },
         data: {
           amount: form.money,
           token,

@@ -4,6 +4,7 @@ import { Form, Button, Container, Card, Row, Col } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import Message from '../components/Message';
 import Loader from '../components/Loader';
+import Meta from '../components/Meta';
 import { resetPassword } from '../actions/userActions';
 import resetBackground from '../assets/images/reset-password.jpg';
 
@@ -65,6 +66,7 @@ const ResetPasswordScreen = () => {
 
   return (
     <Container style={{ marginTop: '100px' }}>
+      <Meta title="Reset password" />
       <Row
         className="justify-content-between mx-5"
         style={{ marginTop: '80px' }}

@@ -1,12 +1,14 @@
 import React from 'react';
 import { Button, Container } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import Meta from '../components/Meta';
 import pagenotfoundImage from '../assets/images/pagenotfound.jpg';
 
 const PageNotFound = () => {
   const navigate = useNavigate();
   return (
     <Container>
+      <Meta title="404 Page not found" />
       <div
         className="d-flex flex-column align-items-center"
         style={{ position: 'relative', top: '20px' }}

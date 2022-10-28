@@ -12,6 +12,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import Message from '../components/Message';
 import Loader from '../components/Loader';
+import Meta from '../components/Meta';
 import { getUserProfile, updateUserProfile } from '../actions/userActions';
 import { USER_UPDATE_PROFILE_RESET } from '../constants/userConstants';
 import cover from '../assets/images/cover.jpg';
@@ -26,8 +27,6 @@ const ProfileScreen = () => {
   const [message, setMessage] = useState(null);
   const [showModal, setShowModal] = useState(false);
   const [image, setImage] = useState(null);
-  // eslint-disable-next-line
-  const [uploadingImg, setUploadingImg] = useState(false);
   const [imagePreview, setImagePreview] = useState(null);
 
   const navigate = useNavigate();
@@ -65,17 +64,14 @@ const ProfileScreen = () => {
     formData.append('image', image);
 
     try {
-      setUploadingImg(true);
       const config = {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
       };
       const { data } = await axios.post('/api/upload', formData, config);
-      setUploadingImg(false);
       return data;
     } catch (error) {
-      setUploadingImg(false);
       console.error(error);
     }
   };
@@ -134,6 +130,7 @@ const ProfileScreen = () => {
 
   return (
     <Container className="d-flex justify-content-center">
+      <Meta title="Profile" />
       <Row className="mt-5">
         <Col>
           {successUpdate && (

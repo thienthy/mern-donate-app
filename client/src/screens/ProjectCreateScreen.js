@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import Message from '../components/Message';
 import Loader from '../components/Loader';
+import Meta from '../components/Meta';
 import FormContainer from '../components/FormContainer';
 import { createProject } from '../actions/projectActions';
 import { PROJECT_CREATE_RESET } from '../constants/projectConstants';
@@ -116,6 +117,7 @@ const ProjectCreateScreen = () => {
 
   return (
     <Container>
+      <Meta title="Project create" />
       <Link to="/admin/projects" className="btn btn-primary my-3">
         Go Back
       </Link>

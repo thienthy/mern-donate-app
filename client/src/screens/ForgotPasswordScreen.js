@@ -3,6 +3,7 @@ import { Form, Button, Row, Col, Container, Card } from 'react-bootstrap';
 import forgotBackground from '../assets/images/forgot-password.jpg';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import Meta from '../components/Meta';
 
 const ForgotPasswordScreen = () => {
   const [email, setEmail] = useState('');
@@ -38,6 +39,7 @@ const ForgotPasswordScreen = () => {
 
   return (
     <Container>
+      <Meta title="Forgot password" />
       <Row
         className="justify-content-between mx-5"
         style={{ marginTop: '80px' }}

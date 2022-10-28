@@ -96,7 +96,7 @@ const Project = ({ project }) => {
         >
           {/* Hide remain time when "status" = Donate or remain time <= 0*/}
           {project.remainTime <= 0 ? (
-            <Card.Text className="dayComplete">0</Card.Text>
+            <Card.Text className="day-complete">0</Card.Text>
           ) : project.status === 'Donate' ? (
             <Card.Text className="day-left">
               Còn {project.remainTime} Ngày

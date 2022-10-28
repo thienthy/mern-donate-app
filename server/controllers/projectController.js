@@ -28,6 +28,9 @@ exports.getProjects = asyncHandler(async (req, res) => {
 
     project.remainTime = remainDate;
 
+    if (remainDate > 0 && project.status !== 'Complete') {
+      project.status = 'Donate';
+    }
     if (remainDate <= 0 && project.status === 'Donate') {
       project.status = 'Finish';
     }
@@ -52,6 +55,9 @@ exports.getAdminProjects = asyncHandler(async (req, res) => {
 
     project.remainTime = remainDate;
 
+    if (remainDate > 0 && project.status !== 'Complete') {
+      project.status = 'Donate';
+    }
     if (remainDate <= 0 && project.status === 'Donate') {
       project.status = 'Finish';
     }

@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import Message from '../components/Message';
 import Loader from '../components/Loader';
+import Meta from '../components/Meta';
 import { getUserDetails } from '../actions/userActions';
 import { listUserDonations } from '../actions/donationActions';
 import { useTable, useSortBy, usePagination } from 'react-table';
@@ -95,6 +96,7 @@ const UserDonationScreen = () => {
 
   return (
     <Container style={{ marginTop: '90px' }}>
+      <Meta title="User donations" />
       <Link to="/admin/users" className="btn btn-light my-3">
         Go Back
       </Link>

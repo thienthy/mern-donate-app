@@ -10,6 +10,7 @@ import {
 import { listDonations } from '../actions/donationActions';
 import Message from '../components/Message';
 import Loader from '../components/Loader';
+import Meta from '../components/Meta';
 import { useNavigate } from 'react-router-dom';
 
 const DonationListScreen = () => {
@@ -99,6 +100,7 @@ const DonationListScreen = () => {
 
   return (
     <Container>
+      <Meta title="Donations" />
       <Row className="align-items-center">
         <Col>
           <h2>Donations</h2>
@@ -120,14 +122,20 @@ const DonationListScreen = () => {
         <Message variant="danger">{error}</Message>
       ) : (
         <>
+          {/* Apply the table props */}
           <Table striped bordered hover responsive {...getTableProps()}>
             <thead>
+              {/* Loop over the header rows */}
               {headerGroups.map((headerGroup) => (
+                // Apply the header row props
                 <tr {...headerGroup.getHeaderGroupProps()}>
+                  {/* Loop over the headers in each row */}
                   {headerGroup.headers.map((column) => (
+                    // Apply the header cell props
                     <th
                       {...column.getHeaderProps(column.getSortByToggleProps())}
                     >
+                      {/* // Render the header */}
                       {column.render('Header')}
                       {column.isSorted
                         ? column.isSortedDesc
@@ -139,13 +147,22 @@ const DonationListScreen = () => {
                 </tr>
               ))}
             </thead>
+            {/* Apply the table body props */}
             <tbody {...getTableBodyProps()}>
+              {/* Loop over the table rows */}
               {page.map((row, i) => {
+                // Prepare the row for display
                 prepareRow(row);
                 return (
+                  // Apply the row props
                   <tr {...row.getRowProps()}>
+                    {/* Loop over the rows cells */}
                     {row.cells.map((cell) => (
-                      <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
+                      // Apply the cell props
+                      <td {...cell.getCellProps()}>
+                        {/* Render the cell contents */}
+                        {cell.render('Cell')}
+                      </td>
                     ))}
                   </tr>
                 );

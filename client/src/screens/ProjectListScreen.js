@@ -12,6 +12,7 @@ import {
 import { listProjectsByAdmin, deleteProject } from '../actions/projectActions';
 import Loader from '../components/Loader';
 import Message from '../components/Message';
+import Meta from '../components/Meta';
 import warning from '../assets/images/x-cross.png';
 import { toast } from 'react-toastify';
 
@@ -171,6 +172,7 @@ const List = () => {
 
   return (
     <Container>
+      <Meta title="Projects" />
       <Row className="align-items-center">
         <Col>
           <h2>Projects</h2>
@@ -198,14 +200,20 @@ const List = () => {
         <Message variant="danger">{error}</Message>
       ) : (
         <>
+          {/* Apply the table props */}
           <Table striped bordered hover responsive {...getTableProps()}>
             <thead>
+              {/* Loop over the header rows */}
               {headerGroups.map((headerGroup) => (
+                // Apply the header row props
                 <tr {...headerGroup.getHeaderGroupProps()}>
+                  {/* Loop over the headers in each row */}
                   {headerGroup.headers.map((column) => (
+                    // Apply the header cell props
                     <th
                       {...column.getHeaderProps(column.getSortByToggleProps())}
                     >
+                      {/* // Render the header */}
                       {column.render('Header')}
                       {column.isSorted
                         ? column.isSortedDesc
@@ -217,20 +225,28 @@ const List = () => {
                 </tr>
               ))}
             </thead>
+            {/* Apply the table body props */}
             <tbody {...getTableBodyProps()}>
+              {/* Loop over the table rows */}
               {page.map((row, i) => {
+                // Prepare the row for display
                 prepareRow(row);
                 return (
+                  // Apply the row props
                   <tr {...row.getRowProps()}>
+                    {/* Loop over the rows cells */}
                     {row.cells.map((cell) => (
-                      <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
+                      // Apply the cell props
+                      <td {...cell.getCellProps()}>
+                        {/* Render the cell contents */}
+                        {cell.render('Cell')}
+                      </td>
                     ))}
                   </tr>
                 );
               })}
             </tbody>
           </Table>
-
           <div
             style={{ padding: '0.5rem' }}
             className="d-flex justify-content-between"

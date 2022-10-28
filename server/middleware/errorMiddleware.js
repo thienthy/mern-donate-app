@@ -1,6 +1,6 @@
 // handle 404 errors
 exports.notFound = (req, res, next) => {
-  exports.error = new Error(`Route not found - ${req.originalUrl}`);
+  const error = new Error(`Route not found - ${req.originalUrl}`);
   res.status(404);
   next(error);
 };

@@ -16,7 +16,6 @@ router.get(
   }),
   function (req, res) {
     // Successful authentication, redirect home.
-    console.log(req);
     res.redirect(
       `http://localhost:3000/login?login=success&id=${req.user._id}`
     );
