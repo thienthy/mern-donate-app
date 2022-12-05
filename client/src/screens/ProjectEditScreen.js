@@ -126,7 +126,7 @@ const ProjectEditScreen = () => {
 
   return (
     <Container>
-      <Meta title={`Project ${project._id}`} />
+      <Meta title={`Project ${project?._id}`} />
       <Link to="/admin/projects" className="btn btn-primary my-3">
         Go Back
       </Link>
