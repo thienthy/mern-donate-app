@@ -70,7 +70,7 @@ const DonateModalWithoutLogin = ({
   const payNow = async (token) => {
     try {
       const response = await axios({
-        url: 'http://localhost:5000/api/donations/payment',
+        url: 'https://mern-donateapp.onrender.com/api/donations/payment',
         method: 'post',
         data: {
           amount: form.money,
