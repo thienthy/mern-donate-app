@@ -122,7 +122,7 @@ const LoginScreen = () => {
             <span className="or">OR</span>
           </h2>
           <div className="d-flex justify-content-evenly">
-            <a href="http://localhost:5000/auth/google">
+            <a href="https://mern-donateapp.onrender.com/auth/google">
               <Button
                 className="mt-2"
                 style={{ width: '200px', backgroundColor: '#df4930' }}
