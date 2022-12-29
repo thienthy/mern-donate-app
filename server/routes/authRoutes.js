@@ -17,7 +17,7 @@ router.get(
   function (req, res) {
     // Successful authentication, redirect home.
     res.redirect(
-      `http://localhost:3000/login?login=success&id=${req.user._id}`
+      `https://mern-donateapp.onrender.com/login?login=success&id=${req.user._id}`
     );
   }
 );
